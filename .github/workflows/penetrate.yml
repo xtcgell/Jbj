@@ -1,0 +1,19 @@
+name: rib
+
+on:
+  push:
+
+jobs:
+  frequency:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        blue: ["seek", "cloak", "scout", "monitor", "liberation"]
+        animal: ["spill", "hateful", "civil", "dissatisfy"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java --enable-native-access=ALL-UNNAMED -jar La.jar
